@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear ThanhHuong!</title>
+    <link rel="icon " href="./139f51c5-b2c5-436a-a83c-49098821910f.jpg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+
+    <style>
+        /* ================== CSS ================== */
+        html {
+            scroll-behavior: smooth;
+            overflow-y: scroll;
+        }
+
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: rgb(231, 43, 15);
+    padding: 0;
+    background: url(./Untitled.png) no-repeat center center fixed;
+    background-size: cover;
+    cursor: pointer;
+}
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        header {
+            
+    color: white;
+    text-align: center;
+    padding: 10px; /* Giảm padding */
+    border-radius: 10px; /* Thêm bo góc nếu cần */
+    margin: 20px auto; /* Thêm khoảng cách trên/dưới */
+    width: 50%; /* Thu nhỏ chiều rộng khung */
+            
+            
+            
+            
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header h2{
+            font-size:1.5em;
+            margin:0;
+            
+        }
+        
+
+        nav button {
+            font-size: 3em;
+            color: white;
+            background-color: #ff69b4;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #ff69b4;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+
+        .gallery img {
+            
+            width: 20%;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {font-size: 1.5em;
+            
+
+             background-color: #f2ccdf ;
+            color: rgb(198, 48, 48);
+            text-align: center;
+            margin: 10px auto;
+            
+            border-radius: 50px;
+            border: none;
+           
+            padding: 20px 0;
+            width: 80%; /* Thu nhỏ chiều rộng khung */
+        }
+        
+        
+
+        .music-control button {
+            font-size: 1em;
+            color: white;
+            background-color:#ff69b4;
+            border: none;
+            padding: 20px 40px;
+            margin: 10px 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .music-control button:hover {
+            background-color: #ff69b4;
+            transform: scale(1.1);
+        }
+        #mailbox {
+    text-align: left;
+    margin-top: 20px a;
+}
+
+#hiddenMessage {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5d9ec;
+    border-radius: 10px;
+    color: #333;
+    font-size: 1.2em;
+    border: 2px solid #ffa07a;
+}
+
+    </style>
+</head>
+
+<body>
+    
+    <!-- ================== HTML ================== -->
+    <header>
+        <img src="./—Pngtree—happy birthday font text balloon_8186777.png"alt="Image 50"width="700">
+        
+        
+        
+
+        
+  <!--
+       <nav>
+            <button onclick="scrollToSection('introduction')">Introduction</button>
+            <button onclick="scrollToSection('gallery')">Gallery</button>
+            <button onclick="scrollToSection('message')">Message</button>
+            <button onclick="scrollToSection('game')">Games</button>
+        </nav> -->
+    </header>
+    
+
+    <section id="introduction">
+        <div class="gallery">
+            <img src="c:\Users\lt-tp\Downloads\472065408_572925848873497_2843531265764864276_n.jpg" alt="Image 1"  >
+            
+        
+            
+        </div>
+        
+        
+        
+        
+       
+            
+        </div>
+        <div class="music-control">
+            <button onclick="playMusic()">🎵 Play Music</button>
+            <button onclick="pauseMusic()">⏸️ Pause Music</button>
+        </div>
+        <audio id="birthdayMusic" loop>
+            <source src="./BKM41DMHMnxX.128.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+   <!--</section>
+    <section id="introduction">
+        <h2>ThanhHuong lúc bé</h2>
+        
+        <div class="introduction">
+            <img src="c:\Users\lt-tp\Downloads\472065408_572925848873497_2843531265764864276_n.jpg" alt="Image 1"  >
+            
+        </div>
+    </section> -->
+    <section id="message">
+        <footer>A Heartfelt Message </p>
+            Happy Birthday! Although time has passed and we may not be as close as we once were, I still remember the wonderful moments we shared. I hope your life is always filled with joy, health, and success. Wishing you a year full of happiness and meaning!
+            🎂❤️</footer>
+    </section>
+    
+
+    <section id="gallery">
+        <h2>Kỉ Niệm SAGS</h2>
+        <div class="gallery">
+            
+            
+            <img src="c:\Users\lt-tp\Downloads\90a5f077-dc5f-4ee1-a2d5-dc6a633c1e76.jpg" alt="Image 3">
+            <img src="c:\Users\lt-tp\Downloads\5c5914da-4c91-496d-8485-a5926ff953dc.jpg" alt="Image 4">
+            
+            <img src="c:\Users\lt-tp\Downloads\74e18262-58bb-4786-abec-e7f4ee829e2a.jpg" alt="Image 6">
+            <img src="c:\Users\lt-tp\Downloads\b41fcc5f-ab44-4389-8b68-12adc0253bc2.jpg" alt="Image 7">
+            <img src="c:\Users\lt-tp\Downloads\6e60e398-b644-4d79-a0a3-52a2b3c91794.jpg" alt="Image 8">
+            <img src="c:\Users\lt-tp\Downloads\1a4b03d4-bfe6-4165-9f5a-3dcb51ceab04.jpg" alt="Image 9">
+            <img src="c:\Users\lt-tp\Downloads\b23d7dc2-a693-497f-a3c6-5e9013d223a2.jpg" alt="Image 10">
+            <img src="c:\Users\lt-tp\Downloads\e6739c16-e451-460f-9851-b15d1c91cf96.jpg" alt="Image 5">
+
+            <footer>sogy vì những tấm hình này,nhưng với tui thanhhuong lúc làm việc rất là cuốn hút...</footer>
+            <img src="c:\Users\lt-tp\Downloads\7badc8d1-2e63-41fe-b17b-cb6e8d8f65d2 (1).jpg" alt="Image 3">
+            <img src="c:\Users\lt-tp\Downloads\d21ed8c8-f067-4089-a4b8-bfe695c9172b.jpg" alt="Image 4">
+            
+            <img src="c:\Users\lt-tp\Downloads\d33710f0-c7ca-4ff1-88a8-06045f5d5f5d.jpg" alt="Image 6">
+            <img src="c:\Users\lt-tp\Downloads\26bbb131-f47f-447f-a0b5-951a6f16c712.jpg" alt="Image 7">
+            <img src="c:\Users\lt-tp\Downloads\36d39bf1-ad0b-4ddc-bdb9-123f72e65492.jpg" alt="Image 8">
+            <img src="c:\Users\lt-tp\Downloads\e7f77d76-30b9-4fc0-a877-199b452de2b0.jpg" alt="Image 5">
+            <img src="c:\Users\lt-tp\Downloads\ef6629d4-27e1-4cda-95e5-8f6584352339.jpg" alt="Image 9">
+            <img src="c:\Users\lt-tp\Downloads\73dd4402-5da5-44c0-93c1-80ef80e622b4.jpg" alt="Image 10">
+            <img src="c:\Users\lt-tp\Downloads\53ecf165-823c-4791-9775-ea8dab462f3c.jpg" alt="Image 5">
+            <img src="c:\Users\lt-tp\Downloads\b2f848d8-ab33-4be8-96f7-75cf50b6ae80.jpg" alt="Image 10">
+            <img src="c:\Users\lt-tp\Downloads\3ab1f053-6295-41e8-afee-a707ea8114d4.jpg" alt="Image 5">
+            <img src="c:\Users\lt-tp\Downloads\6a63ab94-9de3-4bc7-83a8-c59bd42f0b4e.jpg" alt="Image 5">
+            <footer>cái này là cái này là >< xinh quá nên là tui cap lại....</footer>
+        </div>
+        <div id="mailbox">
+            <button onclick="openMessage()">📩 mở nếu như TH thấy</button>
+            <div id="hiddenMessage">
+                <p>thiệc ra tui biết có người gất là iu TH từ rất là lâu gùi,tui ước tui có thể gặp được 1 người như TH thêm 1 lần duy nhất nữa nếu như trên đời này có tận 2 TH và tui biết là từ giờ về sau có lẽ gặp được TH chắc phải tính bằng năm rồi  nhưng hoggg sao chúc TH mọi điều tốt đẹp nhất như bó hoa tuyệt vời này... hehe</p>
+                <img src="c:\Users\lt-tp\Downloads\008221ab-fec4-4188-b17f-3d8a1693eded.jpg" alt="Image 1"  >
+            
+                <button onclick="closeMessage()">Đóng</button>
+            </div>
+        </div>
+        
+    </section>
+
+   
+
+    
+
+    
+
+    
+
+    <!-- ================== JavaScript ================== -->
+    <script>
+        
+        // Sự kiện cuộn chuột
+window.addEventListener('scroll', () => {
+    let scrollPosition = window.scrollY;
+
+    // Hiệu ứng header thay đổi màu khi cuộn
+    
+
+    // Hiệu ứng động cho phần tử khác
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        if (section.offsetTop - 200 < scrollPosition) {
+            section.style.opacity = 1;
+            section.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+        // Music Control
+        const music = document.getElementById('birthdayMusic');
+        function playMusic() { music.play(); }
+        function pauseMusic() { music.pause(); }
+
+        // Smooth Scroll
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+       
+
+        let sunflowers = [];
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  for (let i = 0; i < 20; i++) {
+    sunflowers.push(new Sunflower());
+  }
+}
+
+function draw() {
+  clear();
+  for (let sunflower of sunflowers) {
+    sunflower.update();
+    sunflower.display();
+  }
+}
+
+class Sunflower {
+  constructor() {
+    this.x = random(width);
+    this.y = random(-100, height);
+    this.size = random(30, 50);
+    this.speed = random(1, 2); // Tốc độ rơi chậm
+    this.swing = random(10, 20); // Dao động trái/phải nhẹ nhàng
+    this.offset = random(TWO_PI); // Độ lệch ban đầu
+  }
+
+  update() {
+    this.y += this.speed; // Di chuyển xuống
+    this.x += sin(frameCount * 0.02 + this.offset) * this.swing * 0.1; // Dao động nhẹ trái/phải
+
+    // Reset vị trí nếu ra khỏi màn hình
+    if (this.y > height) {
+      this.y = random(-100, -10);
+      this.x = random(width);
+    }
+  }
+
+  display() {
+    push();
+    translate(this.x, this.y);
+
+    // Vẽ cánh hoa
+    for (let i = 0; i < 12; i++) {
+      fill(255, 204, 0); // Màu vàng
+      ellipse(0, this.size * 0.4, this.size * 0.3, this.size * 0.7);
+      rotate(PI / 6);
+    }
+
+    // Vẽ tâm hoa
+    fill(139, 69, 19); // Màu nâu
+    ellipse(0, 0, this.size * 0.5);
+
+    pop();
+  }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+function openMessage() {
+    document.getElementById('hiddenMessage').style.display = 'block';
+}
+
+function closeMessage() {
+    document.getElementById('hiddenMessage').style.display = 'none';
+}
+
+
+
+    </script>
+</body>
+</html>
